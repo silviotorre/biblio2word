@@ -1,4 +1,8 @@
 import { splitEntries, parseApa6Entry } from "../src/parser/apa6.js";
+import { parseChicagoEntry } from "../src/parser/chicago.js";
+import { parseHarvardEntry } from "../src/parser/harvard.js";
+import { parseVancouverEntry } from "../src/parser/vancouver.js";
+import { parseOscolaEntry } from "../src/parser/oscola.js";
 import { toCslJson } from "../src/csl/normalize.js";
 import { cslJsonToWordSourceXml, ensureUniqueTags } from "../src/word/mapping.js";
 import { wrapSourcesXml } from "../src/word/xml.js";
@@ -15,6 +19,14 @@ function parseEntries(style, entries) {
     case "apa6":
     default:
       return entries.map((entry) => parseApa6Entry(entry));
+    case "chicago":
+      return entries.map((entry) => parseChicagoEntry(entry));
+    case "harvard":
+      return entries.map((entry) => parseHarvardEntry(entry));
+    case "vancouver":
+      return entries.map((entry) => parseVancouverEntry(entry));
+    case "oscola":
+      return entries.map((entry) => parseOscolaEntry(entry));
   }
 }
 
