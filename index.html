@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>biblio2word</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">biblio2word</p>
+        <h1>Da bibliografia a Word XML, subito.</h1>
+        <p class="sub">Incolla citazioni (APA 6) e ottieni XML compatibile con Word (OOXML Bibliography).</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="controls">
+        <label class="field">
+          <span>Stile bibliografico</span>
+          <select id="styleSelect" aria-label="Stile bibliografico">
+            <option value="apa6" selected>APA 6 (default)</option>
+          </select>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" id="fullXml" />
+          <span>Genera file completo &lt;b:Sources&gt;</span>
+        </label>
+
+        <button id="downloadBtn" class="btn" type="button">Scarica XML</button>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-head">
+            <h2>Input</h2>
+            <p>Una citazione per riga o separata da riga vuota.</p>
+          </div>
+          <textarea id="inputText" placeholder="Es: Rossi, M. (2019). Titolo articolo. Journal, 12(3), 45-67. https://doi.org/10.1000/xyz123"></textarea>
+        </div>
+
+        <div class="card">
+          <div class="card-head output-head">
+            <h2>Output</h2>
+            <div class="actions">
+              <button id="copyBtn" class="icon-btn" type="button" aria-label="Copia XML" title="Copia XML">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h9v14z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <textarea id="outputText" readonly></textarea>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="assets/app.js"></script>
+</body>
+</html>

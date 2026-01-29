@@ -1,0 +1,203 @@
+:root {
+  --bg: #f4f1ed;
+  --ink: #1b1b1b;
+  --muted: #6b6b6b;
+  --card: #ffffff;
+  --accent: #0f8b8d;
+  --accent-dark: #0a6a6c;
+  --border: #e3ded7;
+  --shadow: 0 20px 60px rgba(15, 10, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI Variable", "Segoe UI", "Trebuchet MS", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top left, #fff5e6 0%, #f4f1ed 45%, #e9eef5 100%);
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 56px;
+}
+
+.hero {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+h1 {
+  font-family: "Palatino Linotype", "Georgia", serif;
+  font-size: clamp(28px, 5vw, 44px);
+  margin: 0;
+}
+
+.sub {
+  color: var(--muted);
+  margin: 0;
+  max-width: 680px;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.field select {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  min-width: 200px;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  min-height: 320px;
+}
+
+.card-head {
+  display: grid;
+  gap: 4px;
+}
+
+.card-head h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card-head p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.output-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: border 0.2s ease, transform 0.2s ease;
+}
+
+.icon-btn:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.icon-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--accent);
+}
+
+textarea {
+  width: 100%;
+  min-height: 220px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 14px;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  resize: vertical;
+  background: #fbfbfb;
+}
+
+textarea:focus {
+  outline: 2px solid rgba(15, 139, 141, 0.3);
+  border-color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .panel {
+    padding: 18px;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
