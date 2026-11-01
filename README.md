@@ -2,6 +2,8 @@
 
 ![Web app preview](media/biblio2word_social.png)
 
+[![CI](https://github.com/silviotorre/biblio2word/actions/workflows/ci.yml/badge.svg)](https://github.com/silviotorre/biblio2word/actions/workflows/ci.yml)
+
 A browser-based utility that converts bibliographic citations into **Microsoft Word Bibliography XML (OOXML)** using the Office bibliography schema.
 
 Demo: https://silviotorre.github.io/biblio2word/
@@ -67,7 +69,7 @@ Rossi, M, Titolo libro (Editore 2019)
 - Modular parsers and normalization logic under `src/`.
 - CSL-JSON used as the intermediate representation.
 - Dedicated mapping from normalized CSL data to Word bibliography XML.
-- Automated tests available through `npm test`.
+- Automated tests available through `npm test` and GitHub Actions.
 
 ## Project status
 
